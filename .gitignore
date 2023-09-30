@@ -1,3 +1,4 @@
 /build/
 /Eva_Logger.egg-info/
 .idea
+*.log

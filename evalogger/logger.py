@@ -40,30 +40,16 @@ class EvaLogger:
             print(f"[{str(datetime.datetime.now()).split('.')[0]}][{Colors.GREEN}SUCCESS{Colors.RESET}] {text}")
         self.log("SUCCESS", text)
 
-    def network(self, response):
-        if self.print_to_console:
-            if isinstance(response, requests.Response):
-                text_nocolor = f"[{response.request.method}][{response.status_code}] {response.url}"
-                print(
-                    f"[{str(datetime.datetime.now()).split('.')[0]}][{Colors.BLUE}NETWORK{Colors.RESET}][{Colors.TURKIS}{response.request.method}{Colors.RESET}][{Colors.MAGENTA}{response.status_code}{Colors.RESET}] {response.url}")
-                self.log("NETWORK", text_nocolor)
-            elif isinstance(response, ClientResponse):
-                text_nocolor = f"[{response.method}][{response.status}] {response.url}"
-                print(
-                    f"[{str(datetime.datetime.now()).split('.')[0]}][{Colors.BLUE}NETWORK{Colors.RESET}][{Colors.TURKIS}{response.method}{Colors.RESET}][{Colors.MAGENTA}{response.status}{Colors.RESET}] {response.url}")
-                self.log("NETWORK", text_nocolor)
-            else:
-                pass
-        else:
-            if isinstance(response, requests.Response):
-                text_nocolor = f"[{response.request.method}][{response.status_code}] {response.url}"
-                self.log("NETWORK", text_nocolor)
-            elif isinstance(response, ClientResponse):
-                text_nocolor = f"[{response.method}][{response.status}] {response.url}"
-                self.log("NETWORK", text_nocolor)
-            else:
-                pass
-
+    def network(self, response, text:str = ""):
+        if isinstance(response, requests.Response):
+            text_nocolor = f"[{response.request.method}][{response.status_code}] {response.url} {text}"
+            print(f"[{str(datetime.datetime.now()).split('.')[0]}][{Colors.BLUE}NETWORK{Colors.RESET}][{Colors.TURKIS}{response.request.method}{Colors.RESET}][{Colors.MAGENTA}{response.status_code}{Colors.RESET}] {response.url} {text}")
+            self.log("NETWORK", text_nocolor)
+        elif isinstance(response, ClientResponse):
+            text_nocolor = f"[{response.method}][{response.status}] {response.url} {text}"
+            print(
+                f"[{str(datetime.datetime.now()).split('.')[0]}][{Colors.BLUE}NETWORK{Colors.RESET}][{Colors.TURKIS}{response.method}{Colors.RESET}][{Colors.MAGENTA}{response.status}{Colors.RESET}] {response.url} {text}")
+            self.log("NETWORK", text_nocolor)
     def log(self, type: str, text: str):
         if self.save_to_file:
             with open(self.file_name, "a+") as f:

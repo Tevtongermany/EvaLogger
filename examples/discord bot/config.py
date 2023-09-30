@@ -1,0 +1,2 @@
+token = "enter bot token"
+
