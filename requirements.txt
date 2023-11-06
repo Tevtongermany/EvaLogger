@@ -1,2 +1,3 @@
 aiohttp
 requests
+evalogger @ git+https://github.com/Tevtongermany/EvaLogger.git
