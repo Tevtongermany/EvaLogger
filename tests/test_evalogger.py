@@ -1,4 +1,3 @@
-import evalogger
 import requests
 import aiohttp
 import asyncio
@@ -7,6 +6,7 @@ import sys
 
 sys.path.append("/evalogger")
 
+import evalogger
 
 
 def test_functionality():
@@ -19,6 +19,7 @@ def test_functionality():
     log.network(requests.get("https://google.com"))
     log.network(requests.get("https://google.com"), text="Google")
     log.info("Spacing \n\n")
+
 
 @pytest.mark.asyncio
 async def test_async_functionality():
