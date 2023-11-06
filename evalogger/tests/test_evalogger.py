@@ -2,6 +2,7 @@ import evalogger
 import requests
 import aiohttp
 import asyncio
+import pytest
 
 
 def test_functionality():
@@ -15,8 +16,8 @@ def test_functionality():
     log.network(requests.get("https://google.com"), text="Google")
     log.info("Spacing \n\n")
 
-
-async def async_test_functionality():
+@pytest.mark.asyncio
+async def test_async_functionality():
     log = evalogger.EvaLogger()
     log.info("Hello Async World! ")
     log.warn("Hello Async World!")
@@ -28,5 +29,6 @@ async def async_test_functionality():
             log.network(response)
             log.network(response, text="Google")
 
+
 test_functionality()
-asyncio.run(async_test_functionality())
+asyncio.run(test_async_functionality())
