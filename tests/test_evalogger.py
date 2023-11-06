@@ -3,6 +3,10 @@ import requests
 import aiohttp
 import asyncio
 import pytest
+import sys
+
+sys.path.append("/evalogger")
+
 
 
 def test_functionality():
