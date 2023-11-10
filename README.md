@@ -1,10 +1,13 @@
 # EvaLogger
+
+<img align="right" width="100" height="100" src="https://github.com/Tevtongermany/EvaLogger/blob/main/Evalogger.png">    
 > A simple alternative to the logging library
 
 EvaLogger is a simple logging library for Python. It is designed to be easy to use and to be easily integrated into existing projects.    
     
 [![License - Apache License 2.0](https://img.shields.io/badge/License-Apache_License_2.0-2ea44f)](https://github.com/Tevtongermany/EvaLogger/blob/main/LICENSE)  
 [![Made with Python](https://img.shields.io/badge/Python-blue?logo=python&logoColor=white)](https://python.org "Go to Python homepage")
+
 
 Usage
 -----
